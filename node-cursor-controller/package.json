@@ -1,0 +1,22 @@
+{
+  "name": "cursor-controller",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "tsc",
+    "rebuild": "npm rebuild --runtime=electron --target=27.0.0 --disturl=https://atom.io/download/atom-shell --abi=118"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-rebuild": "^3.2.9",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "robotjs": "^0.6.0",
+    "zap-lib": "../../node"
+  }
+}
