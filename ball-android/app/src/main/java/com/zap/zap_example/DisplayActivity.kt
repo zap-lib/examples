@@ -19,7 +19,7 @@ class DisplayActivity : AppCompatActivity() {
         target.add(POINTER_ID, Paint().apply { color = Color.RED })
 
         zap = object : ZapServer() {
-            override fun onAccelerometerChanged(id: String, x: Int, y: Int) {
+            override fun onAccelerometerChanged(uuid: String, x: Int, y: Int) {
                 target.moveTo(POINTER_ID, x = target.get(POINTER_ID).x - x * 2f)
                 target.moveTo(POINTER_ID, y = target.get(POINTER_ID).y + y * 2f)
             }
