@@ -31,10 +31,10 @@ app.on("window-all-closed", () => {
 
 ipcMain.on("zap-start", (e) => {
   const zap = new class extends ZapServer {
-    onAccelerometerChanged(_: string, x: number, y: number) {
+    onAccelerometerChanged(_id: string, x: number, y: number, _z: number) {
       e.sender.send("zap-acc-data", { x, y });
     }
   };
 
-  zap.start();
+  zap.listen();
 });
