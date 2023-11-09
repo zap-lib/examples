@@ -1,4 +1,4 @@
-package com.zap.zap_example.widgets
+package com.zap_lib.zap_example.widgets
 
 import android.content.Context
 import android.graphics.Canvas

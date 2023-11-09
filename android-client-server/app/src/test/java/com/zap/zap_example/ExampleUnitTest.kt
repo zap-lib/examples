@@ -1,4 +1,4 @@
-package com.zap.zap_example
+package com.zap_lib.zap_example
 
 import org.junit.Test
 

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.zap.zap_example'
+    namespace 'com.zap_lib.zap_example'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.zap.zap_example"
+        applicationId "com.zap_lib.zap_example"
         minSdk 26
         targetSdk 34
         versionCode 1

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ControllerActivity">
 
-    <com.zap.zap_example.widgets.PlaygroundView
+    <com.zap_lib.zap_example.widgets.PlaygroundView
         android:id="@+id/playground"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

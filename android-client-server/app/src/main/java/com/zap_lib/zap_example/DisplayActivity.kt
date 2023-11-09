@@ -1,11 +1,11 @@
-package com.zap.zap_example
+package com.zap_lib.zap_example
 
 import android.graphics.Color
 import android.graphics.Paint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.zap.core.ZapServer
-import com.zap.zap_example.widgets.PlaygroundView
+import com.zap_lib.core.ZapServer
+import com.zap_lib.zap_example.widgets.PlaygroundView
 
 class DisplayActivity : AppCompatActivity() {
     private lateinit var target: PlaygroundView
@@ -19,11 +19,11 @@ class DisplayActivity : AppCompatActivity() {
         target.add(POINTER_ID, Paint().apply { color = Color.RED })
 
         zap = object : ZapServer() {
-            override fun onAccelerometerChanged(uuid: String, x: Int, y: Int) {
+            override fun onAccelerometerChanged(uuid: String, x: Float, y: Float, z: Float) {
                 target.moveTo(POINTER_ID, x = target.get(POINTER_ID).x - x * 2f)
                 target.moveTo(POINTER_ID, y = target.get(POINTER_ID).y + y * 2f)
             }
-        }.also { it.start() }
+        }.also { it.listen() }
     }
 
     override fun onStop() {

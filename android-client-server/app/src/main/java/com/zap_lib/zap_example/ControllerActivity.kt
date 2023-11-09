@@ -1,4 +1,4 @@
-package com.zap.zap_example
+package com.zap_lib.zap_example
 
 import android.content.Context
 import android.graphics.Color
@@ -9,9 +9,9 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.zap.core.ZapAccelerometerData
-import com.zap.core.ZapClient
-import com.zap.zap_example.widgets.PlaygroundView
+import com.zap_lib.core.ZapClient
+import com.zap_lib.zap_example.widgets.PlaygroundView
+import com.zap_lib.core.resources.ZapAccelerometer
 import java.net.InetAddress
 
 class ControllerActivity : AppCompatActivity(), SensorEventListener {
@@ -35,7 +35,7 @@ class ControllerActivity : AppCompatActivity(), SensorEventListener {
         if (event.sensor.type == Sensor.TYPE_ACCELEROMETER) {
             control.x = event.values[0] * -30
             control.y = event.values[1] * 30
-            zap.send(ZapAccelerometerData(event.values[0].toInt(), event.values[1].toInt()))
+            zap.send(ZapAccelerometer(event.values[0], event.values[1], event.values[2]))
         }
     }
 

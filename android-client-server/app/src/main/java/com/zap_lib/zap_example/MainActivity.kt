@@ -1,4 +1,4 @@
-package com.zap.zap_example
+package com.zap_lib.zap_example
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
