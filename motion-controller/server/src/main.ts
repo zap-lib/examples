@@ -20,14 +20,14 @@ function ip() {
 }
 
 const KEYMAP: { [key: string]: string } = {
-  "2131231225": "w", // Up
-  "2131231222": "s", // Down
-  "2131231224": "d", // Left
-  "2131231223": "a", // Right
-  "2131230818": "space", // A
-  "2131230819": "ctrl", // B
-  "2131230821": "esc", // X
-  "2131230822": "enter", // Y
+  "buttonU": "w", // Up
+  "buttonD": "s", // Down
+  "buttonR": "d", // Right
+  "buttonL": "a", // Left
+  "buttonA": "space", // A
+  "buttonB": "ctrl", // B
+  "buttonX": "esc", // X
+  "buttonY": "enter", // Y
 };
 
 const ACC_KEYMAP: { [key: string]: [string, boolean] } = {

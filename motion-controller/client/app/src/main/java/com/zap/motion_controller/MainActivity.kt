@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
                 }
                 else -> null
             }?.let { zapEvent ->
-                zap.send(ZapUiComponent(view.id.toString(), zapEvent))
+                zap.send(ZapUiComponent(view.resources.getResourceName(view.id), zapEvent))
             }
 
             true
