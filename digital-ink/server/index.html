@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'">
+    <title>Digital ink</title>
+    <style>
+      html { margin: 0; padding: 0; }
+      body { margin: auto; padding: 100px; }
+      textarea { font-size: 16px; }
+    </style>
+  </head>
+  <body>
+    <textarea id="text"></textarea>
+    <script>require('./build/renderer.js')</script>
+  </body>
+</html>
