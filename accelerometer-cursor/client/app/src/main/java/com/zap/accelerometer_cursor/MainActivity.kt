@@ -9,10 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import com.github.zap_lib.ZapClient
+import com.github.zap_lib.resources.ZapAccelerometer
 import com.journeyapps.barcodescanner.ScanContract
 import com.journeyapps.barcodescanner.ScanOptions
-import com.zap_lib.core.ZapClient
-import com.zap_lib.core.resources.ZapAccelerometer
 import java.net.InetAddress
 
 class MainActivity : AppCompatActivity(), SensorEventListener {

@@ -12,9 +12,9 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
 import android.widget.Switch
-import com.zap_lib.core.ZapClient
-import com.zap_lib.core.resources.ZapAccelerometer
-import com.zap_lib.core.resources.ZapUiEvent
+import com.github.zap_lib.ZapClient
+import com.github.zap_lib.resources.ZapAccelerometer
+import com.github.zap_lib.resources.ZapUiEvent
 import java.net.InetAddress
 
 class MainActivity : AppCompatActivity(), SensorEventListener {

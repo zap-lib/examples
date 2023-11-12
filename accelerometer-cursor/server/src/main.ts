@@ -1,6 +1,6 @@
 import { app, BrowserWindow } from "electron";
 import robot from 'robotjs';
-import { ZapServer } from "zap-lib";
+import { ZapServer } from "zap-lib-js";
 
 const createWindow = () => {
   const win = new BrowserWindow({

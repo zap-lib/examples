@@ -1,5 +1,5 @@
 import { app, BrowserWindow, ipcMain } from "electron";
-import { Charset, ZapServer } from "zap-lib";
+import { Charset, ZapServer } from "zap-lib-js";
 
 const createWindow = () => {
   const win = new BrowserWindow({

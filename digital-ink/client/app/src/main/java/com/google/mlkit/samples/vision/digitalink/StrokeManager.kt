@@ -12,8 +12,8 @@ import com.google.mlkit.samples.vision.digitalink.RecognitionTask.RecognizedInk
 import com.google.mlkit.vision.digitalink.Ink
 import com.google.mlkit.vision.digitalink.Ink.Stroke
 import java.util.ArrayList
-import com.zap_lib.core.ZapClient
-import com.zap_lib.core.resources.ZapText
+import com.github.zap_lib.ZapClient
+import com.github.zap_lib.resources.ZapText
 import java.net.InetAddress
 
 /** Manages the recognition logic and the content that has been added to the current page.  */

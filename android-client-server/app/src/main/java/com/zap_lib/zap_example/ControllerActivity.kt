@@ -9,9 +9,9 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.zap_lib.core.ZapClient
+import com.github.zap_lib.ZapClient
+import com.github.zap_lib.resources.ZapAccelerometer
 import com.zap_lib.zap_example.widgets.PlaygroundView
-import com.zap_lib.core.resources.ZapAccelerometer
 import java.net.InetAddress
 
 class ControllerActivity : AppCompatActivity(), SensorEventListener {

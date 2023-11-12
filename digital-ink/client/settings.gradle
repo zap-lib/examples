@@ -1,4 +1,2 @@
 rootProject.name = "Digital Ink"
 include ':app'
-include ':libs'
-project(':libs').projectDir = new File(rootDir, 'app/libs/')

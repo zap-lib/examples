@@ -10,9 +10,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 }
 rootProject.name = "Motion Controller"
 include ':app'
-include ':libs'
-project(':libs').projectDir = new File(rootDir, 'app/libs/')

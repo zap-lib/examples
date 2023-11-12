@@ -1,5 +1,5 @@
 import os from "os";
-import { ZapServer, ZapUiComponentEvent } from "zap-lib";
+import { ZapServer, ZapUiEventType } from "zap-lib-js";
 import robot from "robotjs";
 
 function ip() {
@@ -55,8 +55,8 @@ const ACC_KEYMAP: { [key: string]: [string, boolean] } = {
     }
   }
 
-  onUiComponentChanged(_: string, code: string, event: ZapUiComponentEvent, _value?: string) {
-    if (event == ZapUiComponentEvent.CLICK_DOWN) {
+  onUiComponentChanged(_: string, code: string, event: ZapUiEventType, _value?: string) {
+    if (event == ZapUiEventType.CLICK_DOWN) {
       robot.keyToggle(KEYMAP[code], "down");
     } else {
       robot.keyToggle(KEYMAP[code], "up");

@@ -19,6 +19,6 @@
   "dependencies": {
     "qrcode": "^1.5.3",
     "robotjs": "^0.6.0",
-    "zap-lib": "../../../node"
+    "zap-lib-js": "^0.1.0"
   }
 }
