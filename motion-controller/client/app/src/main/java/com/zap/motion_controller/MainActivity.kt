@@ -14,7 +14,7 @@ import android.widget.Button
 import android.widget.Switch
 import com.zap_lib.core.ZapClient
 import com.zap_lib.core.resources.ZapAccelerometer
-import com.zap_lib.core.resources.ZapUiComponent
+import com.zap_lib.core.resources.ZapUiEvent
 import java.net.InetAddress
 
 class MainActivity : AppCompatActivity(), SensorEventListener {
@@ -63,15 +63,15 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
-                    ZapUiComponent.Event.CLICK_DOWN
+                    ZapUiEvent.Event.CLICK_DOWN
                 }
                 MotionEvent.ACTION_UP -> {
                     view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY_RELEASE)
-                    ZapUiComponent.Event.CLICK_UP
+                    ZapUiEvent.Event.CLICK_UP
                 }
                 else -> null
             }?.let { zapEvent ->
-                zap.send(ZapUiComponent(view.resources.getResourceName(view.id), zapEvent))
+                zap.send(ZapUiEvent(view.resources.getResourceName(view.id), zapEvent))
             }
 
             true
