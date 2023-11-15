@@ -1,6 +1,6 @@
 import { app, BrowserWindow } from "electron";
 import robot from 'robotjs';
-import { ZapServer } from "zap-lib-js";
+import { MetaInfo, ZapAccelerometer, ZapServer } from "zap-lib-js";
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -27,9 +27,9 @@ app.whenReady().then(async () => {
 
   const cursor = robot.getMousePos();
   (new class extends ZapServer {
-    onAccelerometerChanged(_: string, x: number, y: number, _z: number) {
-      cursor.x -= x;
-      cursor.y -= y;
+    onAccelerometerChanged(_info: MetaInfo, data: ZapAccelerometer) {
+      cursor.x -= data.x;
+      cursor.y -= data.y;
       robot.moveMouse(cursor.x, cursor.y)
     }
   }).listen();

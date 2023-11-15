@@ -1,6 +1,7 @@
 import os from "os";
-import { ZapServer, ZapUiEventType } from "zap-lib-js";
 import robot from "robotjs";
+import { MetaInfo, ZapAccelerometer, ZapServer, ZapUiEvent, ZapUiEventType } from "zap-lib-js";
+import qrcode from "qrcode-terminal";
 
 function ip() {
   const interfaces = os.networkInterfaces();
@@ -25,8 +26,8 @@ const KEYMAP: { [key: string]: string } = {
   "buttonR": "d", // Right
   "buttonL": "a", // Left
   "buttonA": "space", // A
-  "buttonB": "ctrl", // B
-  "buttonX": "esc", // X
+  "buttonB": "control", // B
+  "buttonX": "escape", // X
   "buttonY": "enter", // Y
 };
 
@@ -36,11 +37,11 @@ const ACC_KEYMAP: { [key: string]: [string, boolean] } = {
 };
 
 (new class extends ZapServer {
-  onAccelerometerChanged(_: string, _x: number, y: number, _z: number) {
-    if (y > 3) {
+  onAccelerometerChanged(_info: MetaInfo, data: ZapAccelerometer) {
+    if (data.y > 2) {
       robot.keyToggle(ACC_KEYMAP["right"][0], "down");
       ACC_KEYMAP["right"][1] = true;
-    } else if (y < -3) {
+    } else if (data.y < -2) {
       robot.keyToggle(ACC_KEYMAP["left"][0], "down");
       ACC_KEYMAP["left"][1] = true;
     } else {
@@ -55,13 +56,15 @@ const ACC_KEYMAP: { [key: string]: [string, boolean] } = {
     }
   }
 
-  onUiComponentChanged(_: string, code: string, event: ZapUiEventType, _value?: string) {
-    if (event == ZapUiEventType.CLICK_DOWN) {
-      robot.keyToggle(KEYMAP[code], "down");
+  onUiEventReceived(_info: MetaInfo, data: ZapUiEvent) {
+    if (data.event == ZapUiEventType.CLICK_DOWN) {
+      robot.keyToggle(KEYMAP[data.uiId], "down");
     } else {
-      robot.keyToggle(KEYMAP[code], "up");
+      robot.keyToggle(KEYMAP[data.uiId], "up");
     }
   }
 }).listen();
 
-console.log(`Motion controller server is listening on ${ip()}`);
+console.log('Motion controller server is listening...');
+console.log('Scan the QR code below to connect your client device.')
+qrcode.generate(ip());

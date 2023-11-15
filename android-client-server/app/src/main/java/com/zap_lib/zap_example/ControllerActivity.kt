@@ -28,7 +28,8 @@ class ControllerActivity : AppCompatActivity(), SensorEventListener {
 
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
 
-        zap = ZapClient(InetAddress.getByName("192.168.35.213"))
+        // TODO: Replace `0.0.0.0` with the address of your server device.
+        zap = ZapClient(InetAddress.getByName("0.0.0.0"))
     }
 
     override fun onSensorChanged(event: SensorEvent) {

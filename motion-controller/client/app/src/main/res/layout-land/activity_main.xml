@@ -12,8 +12,9 @@
         android:layout_width="70dp"
         android:layout_height="80dp"
         android:text="A"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:backgroundTint="#00B67E"
         app:cornerRadius="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,7 +30,7 @@
         android:layout_height="80dp"
         android:backgroundTint="#4CB6F5"
         android:text="B"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:cornerRadius="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,7 +45,7 @@
         android:layout_width="70dp"
         android:layout_height="80dp"
         android:text="Y"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:backgroundTint="#D72E3D"
         app:cornerRadius="100dp"
@@ -61,7 +62,7 @@
         android:layout_height="80dp"
         android:backgroundTint="#F0B432"
         android:text="X"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:cornerRadius="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,7 +77,6 @@
         android:layout_width="110dp"
         android:layout_height="70dp"
         android:backgroundTint="#DCE0E1"
-        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,7 +90,6 @@
         android:layout_width="110dp"
         android:layout_height="70dp"
         android:backgroundTint="#DCE0E1"
-        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -104,7 +103,6 @@
         android:layout_width="70dp"
         android:layout_height="100dp"
         android:backgroundTint="#DCE0E1"
-        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,7 +116,6 @@
         android:layout_width="70dp"
         android:layout_height="100dp"
         android:backgroundTint="#DCE0E1"
-        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -127,7 +124,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.237" />
 
-    <Switch
+    <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/accSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -137,6 +134,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.911" />
+        app:layout_constraintVertical_bias="0.9" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/connectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/qr_code_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

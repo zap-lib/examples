@@ -1,5 +1,5 @@
 import { app, BrowserWindow, ipcMain } from "electron";
-import { Charset, ZapServer } from "zap-lib-js";
+import { MetaInfo, ZapServer, ZapText } from "zap-lib-js";
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -31,8 +31,8 @@ app.on("window-all-closed", () => {
 
 ipcMain.on("zap-start", (e) => {
   (new class extends ZapServer {
-    onTextReceived(_id: string, text: string, _charset: Charset) {
-      e.sender.send("zap-text-data", text);
+    onTextReceived(_info: MetaInfo, data: ZapText) {
+      e.sender.send("zap-text-data", data.str);
     }
   }).listen();
 });

@@ -11,33 +11,45 @@ import android.view.HapticFeedbackConstants
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
-import android.widget.Switch
+import android.widget.Toast
 import com.github.zap_lib.ZapClient
 import com.github.zap_lib.resources.ZapAccelerometer
 import com.github.zap_lib.resources.ZapUiEvent
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.switchmaterial.SwitchMaterial
+import com.journeyapps.barcodescanner.ScanContract
+import com.journeyapps.barcodescanner.ScanOptions
 import java.net.InetAddress
 
 class MainActivity : AppCompatActivity(), SensorEventListener {
-    private lateinit var zap: ZapClient
+    private var zap: ZapClient? = null
     private lateinit var sensorManager: SensorManager
 
     private var useAcc = false
+
+    private val qrLauncher = registerForActivityResult(ScanContract()) {
+        zap = ZapClient(InetAddress.getByName(it.contents.toString()))
+        Toast.makeText(this, "Connected", Toast.LENGTH_SHORT).show()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
-        zap = ZapClient(InetAddress.getByName("192.168.35.213"))
+
+        findViewById<FloatingActionButton>(R.id.connectButton).setOnClickListener {
+            qrLauncher.launch(ScanOptions())
+        }
 
         registerButtonTouchListeners()
-        findViewById<Switch>(R.id.accSwitch).setOnCheckedChangeListener { _, b -> useAcc = b }
+        findViewById<SwitchMaterial>(R.id.accSwitch).setOnCheckedChangeListener { _, b -> useAcc = b }
     }
 
     override fun onSensorChanged(event: SensorEvent) {
         if (useAcc && event.sensor.type == Sensor.TYPE_ACCELEROMETER) {
             val (x, y, z) = event.values
-            zap.send(ZapAccelerometer(x, y, z))
+            zap?.send(ZapAccelerometer(x, y, z))
         }
     }
 
@@ -55,7 +67,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     override fun onStop() {
         super.onStop()
         sensorManager.unregisterListener(this)
-        zap.stop()
+        zap?.stop()
     }
 
     private fun registerButtonTouchListeners() {
@@ -71,7 +83,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
                 }
                 else -> null
             }?.let { zapEvent ->
-                zap.send(ZapUiEvent(view.resources.getResourceName(view.id), zapEvent))
+                zap?.send(ZapUiEvent(view.resources.getResourceEntryName(view.id), zapEvent))
             }
 
             true

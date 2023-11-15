@@ -56,7 +56,10 @@ class StrokeManager {
   private var downloadedModelsChangedListener: DownloadedModelsChangedListener? = null
   private var triggerRecognitionAfterInput = true
   private var clearCurrentInkAfterRecognition = true
-  private val zap = ZapClient(InetAddress.getByName("192.168.35.213"))
+
+  // TODO: Replace `0.0.0.0` with the address of your server device.
+  private val zap = ZapClient(InetAddress.getByName("0.0.0.0"))
+
   var status: String? = ""
     private set(newStatus) {
       field = newStatus
