@@ -27,7 +27,7 @@ app.whenReady().then(async () => {
 
   const cursor = robot.getMousePos();
   (new class extends ZapServer {
-    onAccelerometerChanged(_info: MetaInfo, data: ZapAccelerometer) {
+    onAccelerometerReceived(_info: MetaInfo, data: ZapAccelerometer) {
       cursor.x -= data.x;
       cursor.y -= data.y;
       robot.moveMouse(cursor.x, cursor.y)

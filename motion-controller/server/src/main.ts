@@ -37,7 +37,7 @@ const ACC_KEYMAP: { [key: string]: [string, boolean] } = {
 };
 
 (new class extends ZapServer {
-  onAccelerometerChanged(_info: MetaInfo, data: ZapAccelerometer) {
+  onAccelerometerReceived(_info: MetaInfo, data: ZapAccelerometer) {
     if (data.y > 2) {
       robot.keyToggle(ACC_KEYMAP["right"][0], "down");
       ACC_KEYMAP["right"][1] = true;
