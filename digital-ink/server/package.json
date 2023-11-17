@@ -15,6 +15,6 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "zap-lib-js": "^0.3.0"
+    "zap-lib-js": "^0.4.0"
   }
 }
