@@ -8,7 +8,7 @@ This is an example of running the client and server on an Android device. Depend
 
 This is an example where tilting the client device using the accelerometer sensor of an Android device results in the movement of the mouse cursor on the server device according to the tilt.
 
-## [Motion controller](./motion-controller)
+## [Motion Controller](./motion-controller)
 
 <video src="https://user-images.githubusercontent.com/6410412/284037217-6dbbdcce-1cf4-4c92-b903-15f670bfa9bc.mp4" muted controls></video>
 
