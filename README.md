@@ -10,7 +10,7 @@ This is an example where tilting the client device using the accelerometer senso
 
 ## [Motion controller](./motion-controller)
 
-<video src="https://user-images.githubusercontent.com/6410412/283820914-3d29fa2c-ce84-4be2-9536-0dc32316f9fa.mp4" muted controls></video>
+<video src="https://user-images.githubusercontent.com/6410412/284037070-ea358e2b-b424-4ad8-bec8-a17957ce8c7e.mp4" muted controls></video>
 
 This is an example of using an Android device as a game controller for another device. When the "ACC" switch in the app is turned on, you can use the mobile device as a motion controller through the accelerometer sensor. The server receives UI events and accelerometer data from the client and maps them to specific keys on the keyboard, allowing you to enjoy existing games without modification.
 
