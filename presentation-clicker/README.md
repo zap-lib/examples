@@ -1,6 +1,6 @@
 # Presentation Clicker
 
-<video src="https://user-images.githubusercontent.com/6410412/284578042-cc12f221-8f59-4711-8f33-2b1a11064220.mp4" muted controls></video>
+<video src="https://user-images.githubusercontent.com/6410412/284641055-c2e20e80-1994-4e52-8766-941683b9a040.mp4" muted controls></video>
 
 This example demonstrates using a smartphone as a presentation clicker. The client sends events not only for on-screen UI interactions but also for hardware button events to the server.
 
