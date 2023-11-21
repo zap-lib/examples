@@ -20,6 +20,12 @@ This is an example of using an Android device as a game controller for another d
 
 This is an example where handwriting drawn on the client device is recognized and transmitted to the server device for use.
 
+## [Presentation Clicker](./presentation-clicker)
+
+<video src="https://user-images.githubusercontent.com/6410412/284578042-cc12f221-8f59-4711-8f33-2b1a11064220.mp4" muted controls></video>
+
+This example demonstrates using a smartphone as a presentation clicker. The client sends events not only for on-screen UI interactions but also for hardware button events to the server.
+
 ## License
 
 All projects in this repository are distributed under the [Apache License, Version 2.0](LICENSE).

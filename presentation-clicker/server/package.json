@@ -1,0 +1,24 @@
+{
+  "name": "presentation-clicker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "tsc",
+    "rebuild": "electron-rebuild -f -w robotjs"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/qrcode": "^1.5.5",
+    "electron": "^27.0.0",
+    "electron-rebuild": "^3.2.9",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.3",
+    "robotjs": "^0.6.0",
+    "zap-lib-js": "^0.4.1"
+  }
+}

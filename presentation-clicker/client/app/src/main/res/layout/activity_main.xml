@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:background="#868a8f">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/connectButton"
+        android:layout_gravity="center"
+        android:layout_width="80dp"
+        android:layout_height="90dp"
+        app:cornerRadius="100dp"
+        android:textSize="20sp"
+        android:textColor="#272a2f"
+        android:backgroundTint="#8c8f94"
+        app:strokeWidth="1dp"
+        app:strokeColor="#272a2f"
+        android:text="⃝" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/nextButton"
+        android:layout_gravity="center"
+        android:layout_width="150dp"
+        android:layout_height="160dp"
+        app:cornerRadius="150dp"
+        android:textSize="40sp"
+        android:textColor="#868a8f"
+        android:backgroundTint="#313332"
+        app:strokeColor="#272a2f"
+        android:layout_marginTop="30dp"
+        android:text="＞" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/prevButton"
+        android:layout_gravity="center"
+        android:layout_width="100dp"
+        android:layout_height="110dp"
+        app:cornerRadius="100dp"
+        android:textSize="30sp"
+        android:textColor="#272a2f"
+        android:backgroundTint="#8c8f94"
+        app:strokeWidth="1dp"
+        android:layout_marginTop="30dp"
+        app:strokeColor="#272a2f"
+        android:text="＜" />
+</androidx.appcompat.widget.LinearLayoutCompat>
